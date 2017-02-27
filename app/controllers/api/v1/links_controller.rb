@@ -1,4 +1,9 @@
 class Api::V1::LinksController < ApiController
+  def index
+    @links = Link.top_ten
+    render json: @links, status: 200
+  end
+
   def create
     @link = Link.find_or_initialize_by(link_params)
     @link.read_count += 1
