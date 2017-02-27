@@ -1,0 +1,8 @@
+<div class="container">
+<h1>Top Ten Links from <%= link_to "URL Lockbox", "#" %></h1>
+
+<% @links.each do |link| %>
+  <%= link_to link.url, link.url %>: Read <%= link.read_count %> times
+  <hr>
+<% end %>
+</div>
