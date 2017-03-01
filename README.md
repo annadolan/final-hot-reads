@@ -1,24 +1,22 @@
-# README
+# Hot Reads
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hot Reads is a small app that reads the top ten links from the Url Lockbox app in the last 24 hours and displays them ranked by read count.
 
-Things you may want to cover:
+### Setup:
+Follow setup instructions for [UrlLockbox](https://github.com/annadolan/temp-mid-mod-1/tree/final)
 
-* Ruby version
+Clone: `git clone https://github.com/annadolan/final-hot-reads.git`
 
-* System dependencies
+Install dependencies: `bundle install`
 
-* Configuration
+Set up database: `rake db:create db:migrate`
 
-* Database creation
+Run locally: `rails s -3001`
 
-* Database initialization
+#### API
 
-* How to run the test suite
+This app includes an API to add links and to serve the top ten links to UrlLockbox. The endpoints are as follows:
 
-* Services (job queues, cache servers, search engines, etc.)
+`POST /api/v1/links` - creates a new link. Request format: `{ link: { url: url } }`
 
-* Deployment instructions
-
-* ...
+`GET /api/v1/links/` - returns top ten links, ranked by number of reads.
